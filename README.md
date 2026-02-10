@@ -75,6 +75,6 @@ El pie de página incluye la cláusula de protección de datos personales bajo l
 
 ---
 
-**Desarrollado para el equipo de Marketing - Martin Co**.
+**Desarrollado para Martin Co**.
 
 ---
