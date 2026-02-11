@@ -497,21 +497,21 @@
         // if (company.value !== "") return;
         // if ((Date.now() - formLoadTime) / 1000 < 3) return;
 
-        // if (
-        //   !first_name.classList.contains("is-valid") ||
-        //   !last_name.classList.contains("is-valid") ||
-        //   !email.classList.contains("is-valid") ||
-        //   !phone.classList.contains("is-valid") ||
-        //   !tiene_auto.classList.contains("is-valid")
-        // ) {
-        //   Swal.fire({
-        //     icon: "warning",
-        //     title: "Revisá los campos",
-        //     text: "Por favor completá correctamente el formulario.",
-        //     confirmButtonColor: "#4b1098",
-        //   });
-        //   return;
-        // }
+        if (
+          !first_name.classList.contains("is-valid") ||
+          !last_name.classList.contains("is-valid") ||
+          !email.classList.contains("is-valid") ||
+          !phone.classList.contains("is-valid") ||
+          !tiene_auto.classList.contains("is-valid")
+        ) {
+          Swal.fire({
+            icon: "warning",
+            title: "Revisá los campos",
+            text: "Por favor completá correctamente el formulario.",
+            confirmButtonColor: "#4b1098",
+          });
+          return;
+        }
 
         let telefono = phone.value;
         if (!telefono.startsWith("549")) telefono = "+549" + telefono;
