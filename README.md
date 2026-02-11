@@ -1,80 +1,195 @@
-# Landing Page: "Hacé el Cambio" - Martin Co
+---
 
-Repositorio oficial de la Landing Page de captación de leads para el rubro automotor de **Martin Co**, enfocada en la promoción de planes de ahorro para los concesionarios **Fiat Denver** y **Automotores General San Martín (Peugeot)**.
+# 🚗 Martin Co – Landing de Captación de Leads
 
-## 📋 Descripción del Proyecto
+Landing page optimizada para captación de leads de Plan de Ahorro Fiat y Peugeot en Mendoza.
 
-Esta landing page es una herramienta de conversión directa diseñada para la campaña en el **Mendoza Shopping**. Su objetivo principal es la recolección de datos de clientes potenciales interesados en el beneficio del **50% OFF en la primera cuota** de su plan de ahorro.
+Diseñada para campañas de Meta Ads y tráfico directo, con foco en:
 
-## 🛠️ Stack Tecnológico
+* Alta conversión
+* Validación avanzada en frontend
+* Experiencia UX premium
+* Protección anti-bot
+* Envío vía API a backend externo
 
-* **Frontend**: HTML5 y CSS3 nativo.
+---
 
+## 📌 Objetivo del Proyecto
 
-* **Framework CSS**: Bootstrap 5.3.0 para el sistema de grillas y componentes responsivos.
+Captar potenciales clientes interesados en:
 
+- Planes de ahorro
+- 0km Fiat y Peugeot
+- Financiación personalizada
 
-* **Tipografía**: Montserrat (pesos 400, 700 y 900) vía Google Fonts.
-
-
-* **Iconografía**: FontAwesome 6 para elementos visuales de ubicación.
-
-
-* **Lógica**: JavaScript (Vanilla) para la gestión dinámica del formulario.
-
-
-
-## 🎨 Identidad Visual y UI
-
-El diseño implementa una estética de alto contraste basada en la paleta de la marca:
-
-* **Colores Primarios**: Lila (`#4b1098`) y Amarillo (`#f4c244`).
-
-
-* **Layout**: División diagonal (172deg) que separa la identidad visual del área de acción.
-
-
-* **Componentes**: Uso de `drop-shadow` en el asset de vehículos para generar profundidad sobre el fondo plano.
-
-
-
-## 📁 Arquitectura de Archivos
-
-```text
-/
-├── index.html              # Estructura lógica y estilos embebidos
-├── procesar.php            # Script de backend para gestión de leads (POST)
-├── favicon.ico             # Identificador visual para la pestaña del navegador
-├── ogg.jpg                 # Meta-imagen para Open Graph (WhatsApp/Redes)
-└── assets/                 # Recursos gráficos
-    ├── autos.png           # Render frontal de Fiat Cronos y Peugeot 208
-    ├── hace-el-cambio.png  # Call-to-action gráfico principal
-    ├── logos-marcas...     # Logotipos de Fiat, Peugeot y Mendoza Shopping
-    └── martin-co...        # Identidad corporativa de Martin Co
+Y enviar los datos de manera estructurada al endpoint:
 
 ```
-
-## 🚀 Funcionalidades Clave
-
-1. **Formulario Adaptativo**: Función `toggleModelo()` que despliega el campo de "Año y Modelo" únicamente si el usuario confirma poseer un vehículo para entregar en parte de pago.
-
-
-2. **SEO & Social Optimization**: Configuración completa de etiquetas Open Graph (OG) para asegurar que el enlace se visualice correctamente al ser compartido por WhatsApp.
-
-
-3. **Mobile First**: Gradientes y tamaños de imagen ajustados mediante Media Queries para una carga y visualización óptima en smartphones.
-
-
-4. **Sección de Contacto Físico**: Información detallada sobre el stand en Planta Baja del Shopping para potenciar el tráfico presencial.
-
-
-
-## ⚖️ Aspectos Legales
-
-El pie de página incluye la cláusula de protección de datos personales bajo la **Ley 25.326** y las condiciones de la promoción para asegurar el cumplimiento normativo.
+https://api.martinco.com.ar/lead/
+```
 
 ---
 
-**Desarrollado para Martin Co**.
+## 🧱 Estructura del Proyecto
+
+Proyecto estático compuesto por:
+
+```
+/
+├── index.html
+├── ogg.jpg
+├── favicon.ico
+├── logo-peugeot-blanco.png
+├── logo-fiat-blanco.png
+├── logo-mendoza-shopping_blanco.png
+├── autos.png
+├── hace-el-cambio.png
+└── martin-co-logo-negro.png
+```
+
+No requiere backend propio.
 
 ---
+
+## 🎨 Diseño
+
+- Bootstrap 5
+- Tipografía Montserrat
+- Diseño responsive
+- Fondo diagonal corporativo
+- Branding oficial Fiat / Peugeot
+
+---
+
+## ⚙️ Funcionalidades del Formulario
+
+### ✅ Validaciones Avanzadas
+
+- Nombre y Apellido → solo letras
+- Email → validación HTML5
+- WhatsApp → validación real Argentina
+- Modelo → letras y números
+- Todos los campos obligatorios
+
+---
+
+### 📱 WhatsApp Argentina
+
+Validación inteligente:
+
+- 10 dígitos sin prefijo
+- 13 dígitos con 549
+- Autogenera `+549` si el usuario no lo coloca
+
+---
+
+### ✨ UX Premium
+
+- Validación en tiempo real
+- Animación suave al validar
+- Indicador visual ✔ “Perfecto”
+- Barra de progreso dinámica
+- Loader al enviar
+- SweetAlert2 para mensajes elegantes
+
+---
+
+### 🛡 Protección Anti-Bot
+
+Implementado:
+
+- Honeypot invisible
+- Tiempo mínimo de envío (anti bots rápidos)
+- Validación estricta antes de enviar
+
+No utiliza reCAPTCHA (sin fricción para el usuario).
+
+---
+
+## 📦 Payload Enviado
+
+```json
+{
+  "first_name": "",
+  "last_name": "",
+  "phone": "",
+  "email": "",
+  "details": "{\"tiene_auto\":\"si\",\"modelo_actual\":\"2020 Cronos\"}"
+}
+```
+
+`details` se envía como JSON stringificado.
+
+---
+
+## 🌎 SEO & IA Friendly
+
+Incluye:
+
+- Meta tags optimizados
+- Open Graph
+- Keywords locales (Mendoza)
+- Responsive
+- Estructura semántica clara
+- Datos preparados para consumo por IA
+
+---
+
+## 🚀 Cómo Usar
+
+1. Clonar repositorio
+2. Subir a hosting
+3. Configurar dominio:
+
+   ```
+   formulario.martinco.com.ar
+   ```
+
+4. Verificar que el endpoint API esté activo
+
+---
+
+## 🔐 Seguridad Recomendada (Backend)
+
+Se recomienda que el endpoint valide:
+
+- Honeypot vacío
+- Rate limiting por IP
+- Validación de estructura JSON
+- Sanitización de datos
+
+---
+
+## 📊 Pensado para Campañas
+
+Optimizado para:
+
+- Meta Ads
+- Google Ads
+- Tráfico directo
+- Remarketing
+
+Enfocado en:
+
+- Conversión rápida
+- Baja fricción
+- Experiencia profesional
+
+---
+
+## 👨‍💻 Stack Tecnológico
+
+- HTML5
+- CSS3
+- Bootstrap 5
+- Vanilla JavaScript
+- SweetAlert2
+- Fetch API
+
+---
+
+## 🏢 Proyecto
+
+Desarrollado para:
+
+**Martin Co – Mendoza, Argentina**
