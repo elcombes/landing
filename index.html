@@ -416,7 +416,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-      let formLoadTime = Date.now();
+      // let formLoadTime = Date.now();
 
       function capitalizar(texto) {
         return texto.toLowerCase().replace(/\b\w/g, (l) => l.toUpperCase());
@@ -494,8 +494,8 @@
       leadForm.onsubmit = async function (e) {
         e.preventDefault();
 
-        if (company.value !== "") return;
-        if ((Date.now() - formLoadTime) / 1000 < 3) return;
+        // if (company.value !== "") return;
+        // if ((Date.now() - formLoadTime) / 1000 < 3) return;
 
         // if (
         //   !first_name.classList.contains("is-valid") ||
