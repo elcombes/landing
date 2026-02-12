@@ -1,0 +1,230 @@
+:root {
+  --lila: #4b1098;
+  --amarillo: #f4c244;
+  --crema-form: #fefaf0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--amarillo);
+}
+
+/* Fondo con división diagonal ajustada según tus capturas */
+.main-wrapper {
+  background: linear-gradient(172deg, var(--lila) 40%, var(--amarillo) 40%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-logos {
+  padding: 30px 0;
+  text-align: center;
+}
+.header-logos img {
+  max-height: 45px;
+  margin: 0 15px;
+}
+
+.hero-container {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.img-hace-cambio {
+  max-width: 85%;
+  height: auto;
+  margin-bottom: 80px;
+}
+
+.img-autos {
+  max-width: 100%;
+  height: auto;
+  /* Sombra sutil para despegar los autos del fondo */
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* Formulario Cuadrado */
+.form-section {
+  padding: 40px 15px;
+}
+
+.custom-card {
+  background-color: var(--crema-form);
+  border: none;
+  border-radius: 0 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.custom-card h2 {
+  color: var(--lila);
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0 !important;
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+.btn-enviar {
+  background-color: var(--lila);
+  color: white;
+  border: none;
+  border-radius: 0 !important;
+  padding: 15px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  background-color: #350b6e;
+  color: white;
+}
+
+/* Footer y Stand */
+.footer-content {
+  text-align: center;
+  padding: 50px 15px;
+}
+
+.location-info {
+  color: var(--lila);
+  margin-bottom: 30px;
+}
+
+.location-info i {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-logo img {
+  max-width: 200px;
+  margin-bottom: 30px;
+}
+
+/* Texto Legal */
+.legal-text {
+  font-size: 0.7rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+  text-align: justify;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#contenedor-modelo {
+  display: none;
+}
+
+/* Media Query Mobile ajustada */
+@media (max-width: 768px) {
+  .main-wrapper {
+    background: linear-gradient(172deg, var(--lila) 30%, var(--amarillo) 30%);
+  }
+  .img-hace-cambio {
+    margin-bottom: 40px;
+  }
+  .custom-card {
+    padding: 25px;
+  }
+}
+.img-mendoza-shopping {
+  max-width: 100px;
+  height: auto;
+  margin-top: -40px;
+  margin-bottom: -50px;
+  opacity: 0.9;
+}
+
+/* Ajustamos el margen del texto de arriba para que no quede todo tan pegado */
+.img-hace-cambio {
+  max-width: 85%;
+  height: auto;
+  margin-bottom: 40px; /* Reducimos un poco este margen para que entre el logo */
+}
+
+/* Estilos para el selector visual de autos */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+  gap: 10px;
+  margin-bottom: 20px;
+  max-height: 400px; /* Limita la altura para que no sea infinito */
+  overflow-y: auto; /* Agrega scroll interno si hay muchos autos */
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.model-option {
+  cursor: pointer;
+  text-align: center;
+}
+
+.model-option input {
+  display: none; /* Escondemos el radio button real */
+}
+
+.model-card {
+  border: 2px solid #eee;
+  padding: 10px;
+  transition: 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.model-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.model-card span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.model-card small {
+  display: block;
+  font-size: 0.65rem;
+  color: #666;
+}
+
+/* Efecto cuando se selecciona un auto */
+.model-option input:checked + .model-card {
+  border-color: var(--lila);
+  background-color: rgba(75, 16, 152, 0.05);
+}
+
+/* Scrollbar personalizado para que no quede feo */
+.model-grid::-webkit-scrollbar {
+  width: 5px;
+}
+.model-grid::-webkit-scrollbar-thumb {
+  background: var(--lila);
+}
+
+@media (min-width: 768px) {
+  .model-grid {
+    grid-template-columns: repeat(3, 1fr);
+  } /* 3 columnas en desktop */
+}
