@@ -1,452 +1,570 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- SEO Básico -->
     <title>Martin Co | Hacé el Cambio</title>
-    <meta name="description" content="Encontrá tu próximo vehículo con el asesoramiento exclusivo de Martin Co. Consultá por disponibilidad de modelos y opciones de financiación personalizadas.">
-    <meta name="keywords" content="Martin Co, Fiat, Peugeot, Automotores, Mendoza Shopping, Financiación, Autos">
-    <meta name="author" content="Martin Co">
-    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="Encontrá tu próximo vehículo con el asesoramiento exclusivo de Martin Co. Consultá por disponibilidad de modelos y opciones de financiación personalizadas."
+    />
+    <meta
+      name="keywords"
+      content="Martin Co, Fiat, Peugeot, Automotores, Mendoza Shopping, Financiación, Autos"
+    />
+    <meta name="author" content="Martin Co" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph (Para compartir por WhatsApp, Facebook e Instagram) -->
-    <meta property="og:title" content="Martin Co | Hacé el Cambio">
-    <meta property="og:description" content="Consultá por tu próximo vehículo con el asesoramiento exclusivo de Martin Co.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://formulario.martinco.com.ar/">
+    <meta property="og:title" content="Martin Co | Hacé el Cambio" />
+    <meta
+      property="og:description"
+      content="Consultá por tu próximo vehículo con el asesoramiento exclusivo de Martin Co."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://formulario.martinco.com.ar/" />
     <!-- Nota: La imagen de abajo es la que aparecerá en la "card" de WhatsApp -->
-    <meta property="og:image" content="ogg.jpg">
+    <meta property="og:image" content="ogg.jpg" />
 
     <!-- Favicon (El ícono que aparece en la pestaña del navegador) -->
-    <link rel="icon" type="image/png" href="favicon.ico"> <!-- Asegurate de subir un favicon.png a tu repo -->
-    
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <!-- Asegurate de subir un favicon.png a tu repo -->
+
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- FontAwesome para el ícono de location -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <style>
-        :root {
-            --lila: #4b1098;
-            --amarillo: #f4c244;
-            --crema-form: #fefaf0;
-        }
+      :root {
+        --lila: #4b1098;
+        --amarillo: #f4c244;
+        --crema-form: #fefaf0;
+      }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--amarillo);
-        }
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--amarillo);
+      }
 
-        /* Fondo con división diagonal ajustada según tus capturas */
+      /* Fondo con división diagonal ajustada según tus capturas */
+      .main-wrapper {
+        background: linear-gradient(
+          172deg,
+          var(--lila) 40%,
+          var(--amarillo) 40%
+        );
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header-logos {
+        padding: 30px 0;
+        text-align: center;
+      }
+      .header-logos img {
+        max-height: 45px;
+        margin: 0 15px;
+      }
+
+      .hero-container {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+
+      .img-hace-cambio {
+        max-width: 85%;
+        height: auto;
+        margin-bottom: 80px;
+      }
+
+      .img-autos {
+        max-width: 100%;
+        height: auto;
+        /* Sombra sutil para despegar los autos del fondo */
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+      }
+
+      /* Formulario Cuadrado */
+      .form-section {
+        padding: 40px 15px;
+      }
+
+      .custom-card {
+        background-color: var(--crema-form);
+        border: none;
+        border-radius: 0 !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+
+      .custom-card h2 {
+        color: var(--lila);
+        font-weight: 900;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .form-control,
+      .form-select {
+        border-radius: 0 !important;
+        border: 1px solid #ccc;
+        padding: 12px;
+        margin-bottom: 20px;
+      }
+
+      .btn-enviar {
+        background-color: var(--lila);
+        color: white;
+        border: none;
+        border-radius: 0 !important;
+        padding: 15px;
+        width: 100%;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0.3s;
+      }
+
+      .btn-enviar:hover {
+        background-color: #350b6e;
+        color: white;
+      }
+
+      /* Footer y Stand */
+      .footer-content {
+        text-align: center;
+        padding: 50px 15px;
+      }
+
+      .location-info {
+        color: var(--lila);
+        margin-bottom: 30px;
+      }
+
+      .location-info i {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .footer-logo img {
+        max-width: 200px;
+        margin-bottom: 30px;
+      }
+
+      /* Texto Legal */
+      .legal-text {
+        font-size: 0.7rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.4;
+        text-align: justify;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      #contenedor-modelo {
+        display: none;
+      }
+
+      /* Media Query Mobile ajustada */
+      @media (max-width: 768px) {
         .main-wrapper {
-            background: linear-gradient(172deg, var(--lila) 40%, var(--amarillo) 40%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+          background: linear-gradient(
+            172deg,
+            var(--lila) 30%,
+            var(--amarillo) 30%
+          );
         }
-
-        .header-logos {
-            padding: 30px 0;
-            text-align: center;
-        }
-        .header-logos img {
-            max-height: 45px;
-            margin: 0 15px;
-        }
-
-        .hero-container {
-            text-align: center;
-            padding-bottom: 20px;
-        }
-
         .img-hace-cambio {
-            max-width: 85%;
-            height: auto;
-            margin-bottom: 80px;
+          margin-bottom: 40px;
         }
-
-        .img-autos {
-            max-width: 100%;
-            height: auto;
-            /* Sombra sutil para despegar los autos del fondo */
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
-        }
-
-        /* Formulario Cuadrado */
-        .form-section {
-            padding: 40px 15px;
-        }
-
         .custom-card {
-            background-color: var(--crema-form);
-            border: none;
-            border-radius: 0 !important;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            padding: 40px;
-            max-width: 550px;
-            margin: 0 auto;
+          padding: 25px;
         }
+      }
+      .img-mendoza-shopping {
+        max-width: 100px;
+        height: auto;
+        margin-top: -40px;
+        margin-bottom: -50px;
+        opacity: 0.9;
+      }
 
-        .custom-card h2 {
-            color: var(--lila);
-            font-weight: 900;
-            margin-bottom: 30px;
-            text-align: center;
+      /* Ajustamos el margen del texto de arriba para que no quede todo tan pegado */
+      .img-hace-cambio {
+        max-width: 85%;
+        height: auto;
+        margin-bottom: 40px; /* Reducimos un poco este margen para que entre el logo */
+      }
+
+      /* funciones para ux ui para el formulario :X */
+      .hp-field {
+        position: absolute;
+        left: -5000px;
+      }
+
+      .form-control,
+      .form-select {
+        transition: all 0.3s ease;
+      }
+
+      .is-valid {
+        border-color: #198754 !important;
+        animation: validPulse 0.4s ease;
+      }
+
+      @keyframes validPulse {
+        0% {
+          transform: scale(1);
         }
-
-        .form-control, .form-select {
-            border-radius: 0 !important;
-            border: 1px solid #ccc;
-            padding: 12px;
-            margin-bottom: 20px;
+        50% {
+          transform: scale(1.03);
         }
-
-        .btn-enviar {
-            background-color: var(--lila);
-            color: white;
-            border: none;
-            border-radius: 0 !important;
-            padding: 15px;
-            width: 100%;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
+        100% {
+          transform: scale(1);
         }
+      }
 
-        .btn-enviar:hover {
-            background-color: #350b6e;
-            color: white;
-        }
+      .valid-feedback-custom {
+        font-size: 0.85rem;
+        color: #198754;
+        display: none;
+        margin-top: -15px;
+        margin-bottom: 15px;
+      }
 
-        /* Footer y Stand */
-        .footer-content {
-            text-align: center;
-            padding: 50px 15px;
-        }
-
-        .location-info {
-            color: var(--lila);
-            margin-bottom: 30px;
-        }
-
-        .location-info i {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .footer-logo img {
-            max-width: 200px;
-            margin-bottom: 30px;
-        }
-
-        /* Texto Legal */
-        .legal-text {
-            font-size: 0.7rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.4;
-            text-align: justify;
-            padding-top: 20px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        #contenedor-modelo { display: none; }
-
-        /* Media Query Mobile ajustada */
-        @media (max-width: 768px) {
-            .main-wrapper {
-                background: linear-gradient(172deg, var(--lila) 30%, var(--amarillo) 30%);
-            }
-            .img-hace-cambio { margin-bottom: 40px; }
-            .custom-card { padding: 25px; }
-        }
-        .img-mendoza-shopping {
-            max-width: 100px;
-            height: auto;
-            margin-top: -40px;
-            margin-bottom: -50px;
-            opacity: 0.9;
-        }
-
-        /* Ajustamos el margen del texto de arriba para que no quede todo tan pegado */
-        .img-hace-cambio {
-            max-width: 85%;
-            height: auto;
-            margin-bottom: 40px; /* Reducimos un poco este margen para que entre el logo */
-        }
-
-        /* Estilos para el selector visual de autos */
-        .model-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
-            gap: 10px;
-            margin-bottom: 20px;
-            max-height: 400px; /* Limita la altura para que no sea infinito */
-            overflow-y: auto; /* Agrega scroll interno si hay muchos autos */
-            padding: 10px;
-            border: 1px solid #ddd;
-            background: #fff;
-        }
-
-        .model-option {
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .model-option input {
-            display: none; /* Escondemos el radio button real */
-        }
-
-        .model-card {
-            border: 2px solid #eee;
-            padding: 10px;
-            transition: 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .model-card img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 5px;
-        }
-
-        .model-card span {
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #333;
-        }
-
-        .model-card small {
-            display: block;
-            font-size: 0.65rem;
-            color: #666;
-        }
-
-        /* Efecto cuando se selecciona un auto */
-        .model-option input:checked + .model-card {
-            border-color: var(--lila);
-            background-color: rgba(75, 16, 152, 0.05);
-        }
-
-        /* Scrollbar personalizado para que no quede feo */
-        .model-grid::-webkit-scrollbar { width: 5px; }
-        .model-grid::-webkit-scrollbar-thumb { background: var(--lila); }
-
-        @media (min-width: 768px) {
-            .model-grid { grid-template-columns: repeat(3, 1fr); } /* 3 columnas en desktop */
-        }
+      .is-valid + .invalid-feedback + .valid-feedback-custom {
+        display: block;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="main-wrapper">
-        <header class="header-logos">
-            <div class="container">
-                <img src="logo-peugeot-blanco.png" alt="Peugeot">
-                <img src="logo-fiat-blanco.png" alt="Fiat">
-            </div>
-        </header>
+      <header class="header-logos">
+        <div class="container">
+          <img src="logo-peugeot-blanco.png" alt="Peugeot" />
+          <img src="logo-fiat-blanco.png" alt="Fiat" />
+        </div>
+      </header>
 
-        <!-- 2. Sección Hero (Texto, Logo Shopping y Autos) -->
-        <main class="hero-container container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Texto PNG "Hacé el Cambio" -->
-                    <img src="hace-el-cambio.png" alt="Hacé el Cambio" class="img-hace-cambio">
-                </div>
-                
-                <!-- NUEVO: Logo Mendoza Shopping -->
-                <div class="col-12 mb-5">
-                    <img src="logo-mendoza-shopping_blanco.png" alt="Mendoza Shopping" class="img-mendoza-shopping">
-                </div>
+      <!-- 2. Sección Hero (Texto, Logo Shopping y Autos) -->
+      <main class="hero-container container">
+        <div class="row">
+          <div class="col-12">
+            <!-- Texto PNG "Hacé el Cambio" -->
+            <img
+              src="hace-el-cambio.png"
+              alt="Hacé el Cambio"
+              class="img-hace-cambio"
+            />
+          </div>
 
-                <div class="col-12">
-                    <!-- Autos PNG -->
-                    <img src="autos.png" alt="Cronos y 208" class="img-autos">
-                </div>
-            </div>
-        </main>
+          <!-- NUEVO: Logo Mendoza Shopping -->
+          <div class="col-12 mb-5">
+            <img
+              src="logo-mendoza-shopping_blanco.png"
+              alt="Mendoza Shopping"
+              class="img-mendoza-shopping"
+            />
+          </div>
 
-        <section class="form-section container">
-            <div class="custom-card">
-                <h2>Pedí más información</h2>
-                <form action="procesar.php" method="POST">
-                    <!-- Datos Personales -->
-                    <input type="text" name="nombre" class="form-control" placeholder="Nombre y Apellido" required>
-                    <input type="email" name="email" class="form-control" placeholder="Email" required>
-                    <input type="tel" name="telefono" class="form-control" placeholder="WhatsApp / Teléfono" required>
-                    
-                    <label class="form-label fw-bold mb-2">Seleccioná el modelo de tu interés:</label>
-                    
-                    <div class="model-grid">
-                        <!-- SECCIÓN FIAT -->
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_cronos" checked>
-                            <div class="model-card">
-                                <img src="fiat-cronos.png" alt="Cronos">
-                                <span>Fiat</span>
-                                <small>Cronos</small>
-                            </div>
-                        </label>
+          <div class="col-12">
+            <!-- Autos PNG -->
+            <img src="autos.png" alt="Cronos y 208" class="img-autos" />
+          </div>
+        </div>
+      </main>
 
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_pulse">
-                            <div class="model-card">
-                                <img src="fiat-pulse.png" alt="Pulse">
-                                <span>Fiat</span>
-                                <small>Pulse</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_strada">
-                            <div class="model-card">
-                                <img src="fiat-strada.png" alt="Strada">
-                                <span>Fiat</span>
-                                <small>Strada</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_toro">
-                            <div class="model-card">
-                                <img src="fiat-toro.png" alt="Toro">
-                                <span>Fiat</span>
-                                <small>Toro</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_fastback">
-                            <div class="model-card">
-                                <img src="fiat-fastback.png" alt="Fastback">
-                                <span>Fiat</span>
-                                <small>Fastback</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_mobi">
-                            <div class="model-card">
-                                <img src="fiat-mobi.png" alt="Mobi">
-                                <span>Fiat</span>
-                                <small>Mobi</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_argo">
-                            <div class="model-card">
-                                <img src="fiat-argo.png" alt="Argo">
-                                <span>Fiat</span>
-                                <small>Argo</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_titano">
-                            <div class="model-card">
-                                <img src="fiat-titano.png" alt="Titano">
-                                <span>Fiat</span>
-                                <small>Titano</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="fiat_fiorino">
-                            <div class="model-card">
-                                <img src="fiat-fiorino.png" alt="Fiorino">
-                                <span>Fiat</span>
-                                <small>Fiorino</small>
-                            </div>
-                        </label>
-
-                        <!-- SECCIÓN PEUGEOT -->
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="peugeot_208">
-                            <div class="model-card">
-                                <img src="peugeot-208.png" alt="208">
-                                <span>Peugeot</span>
-                                <small>Nuevo 208</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="peugeot_2008">
-                            <div class="model-card">
-                                <img src="peugeot-2008.png" alt="2008">
-                                <span>Peugeot</span>
-                                <small>Nuevo 2008</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="peugeot_partner">
-                            <div class="model-card">
-                                <img src="peugeot-partner.png" alt="Partner">
-                                <span>Peugeot</span>
-                                <small>Partner</small>
-                            </div>
-                        </label>
-
-                        <label class="model-option">
-                            <input type="radio" name="modelo_interes" value="peugeot_expert">
-                            <div class="model-card">
-                                <img src="peugeot-expert.png" alt="Expert">
-                                <span>Peugeot</span>
-                                <small>Expert</small>
-                            </div>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-enviar">Quiero mi beneficio</button>
-                </form>
-            </div>
-        </section>
-
-        <footer class="footer-content container">
-            <!-- Sección Stand con Icono -->
-            <div class="location-info">
-                <i class="fa-solid fa-location-dot"></i>
-                <p class="fw-bold mb-0">VISITÁ NUESTRO STAND</p>
-                <p class="small">PASILLO CENTRAL - PLANTA BAJA</p>
+      <section class="form-section container">
+        <div class="custom-card">
+          <h2>Pedí más información</h2>
+          <form id="leadForm" novalidate>
+            <!-- Barra de progreso -->
+            <div class="progress mb-3" style="height: 6px">
+              <div
+                id="formProgress"
+                class="progress-bar bg-success"
+                style="width: 0%"
+              ></div>
             </div>
 
-            <div class="footer-logo">
-                <img src="martin-co-logo-negro.png" alt="Martin Co">
+            <!-- Nombre -->
+            <input
+              type="text"
+              id="first_name"
+              class="form-control"
+              placeholder="Nombre"
+              required
+            />
+            <div class="invalid-feedback">Ingresá solo letras.</div>
+            <div class="valid-feedback-custom">✔ Perfecto</div>
+
+            <!-- Apellido -->
+            <input
+              type="text"
+              id="last_name"
+              class="form-control"
+              placeholder="Apellido"
+              required
+            />
+            <div class="invalid-feedback">Ingresá solo letras.</div>
+            <div class="valid-feedback-custom">✔ Perfecto</div>
+
+            <!-- Email -->
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Email"
+              required
+            />
+            <div class="invalid-feedback">Email inválido.</div>
+            <div class="valid-feedback-custom">✔ Perfecto</div>
+
+            <!-- Teléfono -->
+            <input
+              type="tel"
+              id="phone"
+              class="form-control"
+              placeholder="WhatsApp (sin +549)"
+              required
+            />
+            <div class="invalid-feedback">Número argentino inválido.</div>
+            <div class="valid-feedback-custom">✔ Perfecto</div>
+
+            <!-- Tiene auto -->
+            <select id="tiene_auto" class="form-select" required>
+              <option value="" selected disabled>
+                ¿Tenés un vehículo actualmente?
+              </option>
+              <option value="si">Sí, tengo un auto</option>
+              <option value="no">No, no tengo</option>
+            </select>
+            <div class="invalid-feedback">Seleccioná una opción.</div>
+            <div class="valid-feedback-custom">✔ Perfecto</div>
+
+            <!-- Modelo -->
+            <div id="contenedor-modelo">
+              <input
+                type="text"
+                id="modelo_actual"
+                class="form-control"
+                placeholder="Año y Modelo de tu vehículo"
+              />
+              <div class="invalid-feedback">Solo letras y números.</div>
+              <div class="valid-feedback-custom">✔ Perfecto</div>
             </div>
 
-            <!-- Texto Legal -->
-            <div class="legal-text">
-                <p>
-                    Promoción válida hasta agotar stock de 10 unidades.
-                    Las imágenes de los vehículos son de carácter ilustrativo y no contractuales, pudiendo variar versiones y equipamiento. 
-                    La bonificación del 50% aplica exclusivamente a la primera cuota de planes de ahorro seleccionados. 
-                    Consulte bases, condiciones y financiación en nuestro stand comercial. Martin Co. no garantiza la adjudicación inmediata. 
-                    Protección de Datos Personales: La información suministrada será tratada conforme a la Ley 25.326.
-                </p>
-            </div>
-        </footer>
+            <button type="submit" class="btn btn-enviar">
+              <span id="btnText">Quiero mi beneficio</span>
+              <span
+                id="spinner"
+                class="spinner-border spinner-border-sm d-none"
+              ></span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer-content container">
+        <!-- Sección Stand con Icono -->
+        <div class="location-info">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="fw-bold mb-0">VISITÁ NUESTRO STAND</p>
+          <p class="small">PASILLO CENTRAL - PLANTA BAJA</p>
+        </div>
+
+        <div class="footer-logo">
+          <img src="martin-co-logo-negro.png" alt="Martin Co" />
+        </div>
+
+        <!-- Texto Legal -->
+        <div class="legal-text">
+          <p>
+            Promoción válida hasta agotar stock de 10 unidades. Las imágenes de
+            los vehículos son de carácter ilustrativo y no contractuales,
+            pudiendo variar versiones y equipamiento. La bonificación del 50%
+            aplica exclusivamente a la primera cuota de planes de ahorro
+            seleccionados. Consulte bases, condiciones y financiación en nuestro
+            stand comercial. Martin Co. no garantiza la adjudicación inmediata.
+            Protección de Datos Personales: La información suministrada será
+            tratada conforme a la Ley 25.326.
+          </p>
+        </div>
+      </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        function toggleModelo() {
-            const select = document.getElementById('tiene_auto');
-            const contenedor = document.getElementById('contenedor-modelo');
-            contenedor.style.display = (select.value === 'si') ? 'block' : 'none';
+      // let formLoadTime = Date.now();
+
+      function capitalizar(texto) {
+        return texto.toLowerCase().replace(/\b\w/g, (l) => l.toUpperCase());
+      }
+
+      function validarTexto(t) {
+        return /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(t);
+      }
+
+      function validarModelo(t) {
+        return /^[A-Za-z0-9\s]+$/.test(t);
+      }
+
+      function validarTel(n) {
+        n = n.replace(/\D/g, "");
+        if (n.startsWith("549")) return n.length === 13;
+        return n.length === 10;
+      }
+
+      function updateProgress() {
+        let fields = document.querySelectorAll(
+          "#leadForm input, #leadForm select",
+        );
+        let valid = 0;
+        fields.forEach((f) => {
+          if (f.classList.contains("is-valid")) valid++;
+        });
+        document.getElementById("formProgress").style.width =
+          (valid / fields.length) * 100 + "%";
+      }
+
+      function validarCampo(i, cond) {
+        if (cond) {
+          i.classList.add("is-valid");
+          i.classList.remove("is-invalid");
+        } else {
+          i.classList.add("is-invalid");
+          i.classList.remove("is-valid");
         }
+        updateProgress();
+      }
+
+      first_name.oninput = function () {
+        validarCampo(this, validarTexto(this.value.trim()));
+      };
+      first_name.onblur = function () {
+        this.value = capitalizar(this.value);
+      };
+
+      last_name.oninput = function () {
+        validarCampo(this, validarTexto(this.value.trim()));
+      };
+      last_name.onblur = function () {
+        this.value = capitalizar(this.value);
+      };
+
+      email.oninput = function () {
+        validarCampo(this, this.checkValidity());
+      };
+
+      phone.oninput = function () {
+        this.value = this.value.replace(/\D/g, "");
+        validarCampo(this, validarTel(this.value));
+      };
+
+      tiene_auto.onchange = function () {
+        document.getElementById("contenedor-modelo").style.display =
+          this.value === "si" ? "block" : "none";
+        validarCampo(this, this.value !== "");
+      };
+
+      modelo_actual.oninput = function () {
+        validarCampo(this, validarModelo(this.value.trim()));
+      };
+      leadForm.onsubmit = async function (e) {
+        e.preventDefault();
+
+        // if (company.value !== "") return;
+        // if ((Date.now() - formLoadTime) / 1000 < 3) return;
+
+        if (
+          !first_name.classList.contains("is-valid") ||
+          !last_name.classList.contains("is-valid") ||
+          !email.classList.contains("is-valid") ||
+          !phone.classList.contains("is-valid") ||
+          !tiene_auto.classList.contains("is-valid")
+        ) {
+          Swal.fire({
+            icon: "warning",
+            title: "Revisá los campos",
+            text: "Por favor completá correctamente el formulario.",
+            confirmButtonColor: "#4b1098",
+          });
+          return;
+        }
+
+        let telefono = phone.value;
+        if (!telefono.startsWith("549")) telefono = "+549" + telefono;
+        else telefono = "+" + telefono;
+
+        btnText.classList.add("d-none");
+        spinner.classList.remove("d-none");
+
+        const payload = {
+          first_name: first_name.value.trim(),
+          last_name: last_name.value.trim(),
+          phone: telefono,
+          email: email.value.trim(),
+          details: JSON.stringify({
+            tiene_auto: tiene_auto.value,
+            modelo_actual: modelo_actual.value.trim(),
+          }),
+        };
+
+        try {
+          let r = await fetch("api.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+          if (!r.ok) throw new Error();
+
+          Swal.fire({
+            icon: "success",
+            title: "¡Gracias!",
+            text: "En breve un asesor se comunicará con vos.",
+            confirmButtonColor: "#4b1098",
+          });
+
+          this.reset();
+          document
+            .querySelectorAll(".is-valid")
+            .forEach((e) => e.classList.remove("is-valid"));
+          updateProgress();
+        } catch {
+          Swal.fire({
+            icon: "error",
+            title: "Ups...",
+            text: "Ocurrió un error al enviar el formulario. Intentá nuevamente.",
+            confirmButtonColor: "#4b1098",
+          });
+        }
+
+        btnText.classList.remove("d-none");
+        spinner.classList.add("d-none");
+      };
     </script>
-</body>
+  </body>
 </html>
