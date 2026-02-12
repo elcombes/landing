@@ -1,16 +1,14 @@
----
-
 # 🚗 Martin Co – Landing de Captación de Leads
 
 Landing page optimizada para captación de leads de Plan de Ahorro Fiat y Peugeot en Mendoza.
 
 Diseñada para campañas de Meta Ads y tráfico directo, con foco en:
 
-* Alta conversión
-* Validación avanzada en frontend
-* Experiencia UX premium
-* Protección anti-bot
-* Envío vía API a backend externo
+- Alta conversión
+- Validación avanzada en frontend
+- Experiencia UX premium
+- Protección anti-bot
+- Envío vía API a backend externo
 
 ---
 
